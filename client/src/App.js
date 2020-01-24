@@ -10,6 +10,7 @@ import CreateSurvey from "./components/surveys/create_survey/CreateSurvey";
 import AddCredits from "./components/credits/add_credits/AddCredits";
 import EmailResponse from "./components/email_response/EmailResponse";
 import ReviewSurvey from "./components/surveys/review_survey/ReviewSurvey";
+import PrivateRoute from './components/private_route/PrivateRoute';
 
 // ACTIONS
 import { get_current_user } from "./actions/auth";
