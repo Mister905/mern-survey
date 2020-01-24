@@ -1,0 +1,6 @@
+export const GET_CURRENT_USER = 'GET_CURRENT_USER';
+export const REVIEW_SURVEY = 'REVIEW_SURVEY';
+export const CREATE_SURVEY = 'CREATE_SURVEY';
+export const CANCEL_SURVEY = 'CANCEL_SURVEY';
+export const GET_SURVEYS = 'GET_SURVEYS';
+export const CLEAR_SURVEYS = 'CLEAR_SURVEYS';

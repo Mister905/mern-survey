@@ -1,0 +1,164 @@
+To generate a good secret run the following in the console
+
+node
+require('crypto').randomBytes(64).toString('hex')
+
+Add engines object to server's package.json
+
+Create config files
+
+npm i --save passport passport-google-oauth20@2 --save
+
+create application on Google Cloud Platform
+
+Credentials -> oAuth Client ID
+
+Set product name for Consent Screen -> MERN-Survery-DEV
+
+Credentials -> Create credentials -> oAuth Client ID -> Web Application
+
+Authorized JavaScript origins:  
+    http://localhost:5000
+
+Authorized redirect URIs:   
+    http://localhost:5000/auth/google/callback
+    http://localhost:3000/auth/google/callback
+
+Add config/keys.js to .gitignore
+
+Configure passport strategy - services/passport.js
+
+Setup routes/auth.js
+
+Setup user models/User.js
+
+Setup services/passport.js
+
+Require the previous two in server.js - ensure order of operations
+
+Connect to mongoDB (Create DEV and PROD projects)
+
+When you create DB Admin - use the autogenerate password function - store in zoho vault
+
+Heroku - When creating a new project/cluster you need to whitelist all IP addresses
+
+It's a good practice to use difference passwords for the respective database users
+
+Create a separate set of Google API Credentials for the production app
+
+create application on Google Cloud Platform
+
+Credentials -> oAuth Client ID
+
+oAuth Consent Screen 
+    -> Application Name     MERN-Survey
+    -> Authorized domains   mern-survey-905.herokuapp.com
+
+Credentials -> Create credentials -> oAuth Client ID -> Web Application
+
+Authorized JavaScript origins:  
+    https://mern-survey-905.herokuapp.com
+
+Authorized redirect URIs:   
+    https://mern-survey-905.herokuapp.com/auth/google/callback
+
+Add environment variables on Heroku - Settings -> Reveal Config Variables
+
+npx create-react-app client
+
+Create setupProxy.js file in client/src/ directory. There is no need to import this file anywhere, CRA looks for a file by this name and loads it.
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import App from './components/App';
+
+import reducers from './reducers';
+const store = createStore((reducers) => [], {}, applyMiddleware());
+
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+
+npm i node-sass
+
+create components w/ Sass files and set up react-router
+
+npm install materialize-css@next
+import "materialize-css/dist/css/materialize.min.css";
+
+npm i axios redux-thunk
+
+https://github.com/stripe/react-stripe-elements
+https://stripe.com/docs/recipes/elements-react
+https://jsfiddle.net/f5wxprnc/
+
+BACK END    npm install stripe
+
+FRONT END   npm i react-stripe-elements
+
+<script src="https://js.stripe.com/v3/"></script>
+
+This library is responsible for communicating with Stripe and performing tokenization. It must be available in the page in order for react-stripe-elements to work correctly. For PCI compliance purposes, you must load Stripe.js directly from Stripe’s servers at runtime—you can’t install it from npm or bundle it into your application like a conventional dependency.
+
+On the client side, create environment variables inside
+.env.development & .env.production
+variable names are required to be preceded by REACT_APP_
+Add to .gitignore
+
+test card number:   4242 4242 4242 4242
+
+
+// Import models this way to prevent issues during testing
+const mongoose = require('mongoose');
+const Survey = mongoose.model('surveys');
+
+Setup dev and prod api keys for sendgrid
+
+https://github.com/sendgrid/sendgrid-nodejs/blob/master/use-cases/single-email-multiple-recipients.md
+
+npm install --save @sendgrid/mail
+
+services/Mailer.js
+
+services/email_templates/survey_template.js
+
+routes/surveys.js
+
+Test Email Sending - can access axios object from browser terminal
+This is useful for testing protected routes - it's a pain to do this in Postman
+
+client/index.js
+import axios from 'axios';
+window.axios = axios;
+
+Enter the following commands in the browser terminal
+
+const survey = { title: 'test', subject: 'test', recipients: 'james.joseph.mccarthy.905@gmail.com', body: 'test'}
+axios.post('/surveys', survey);
+
+
+EMAIL TEMPLATE BUILDER
+npm i mjml
+https://mjml.io/templates
+https://mjml.io/try-it-live/templates/referral-email
+services/email_templates/survey_template.js
+const mjml2html = require("mjml");
+
+
+WEBHOOKS
+https://www.udemy.com/course/node-with-react-fullstack-web-development/learn/lecture/17196996#overview
+
+npx ngrok http 5000
+
+sendgrid.com -> Settings -> Mail Settings -> Turn on Event Notification
+
+HTTP POST URL    
+http://df388595.ngrok.io/surveys/WEBHOOKS
+
+ngrok url needs to be reconfigured after session ends or 8 hrs elapses
+
+select actions -> Clicked
+
+Click checkmark to finish before testing integration
+
+Once finished testing, configure to include your production url

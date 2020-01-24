@@ -1,0 +1,40 @@
+.landing-bg {
+    background: url("../../assets/img/landing.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    #landing-overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+  }
+  
+  .landing-nav {
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  .google-icon {
+    margin: 0 7px;
+    font-size: 1.3rem;
+  }
+  
+  .landing-logo {
+    height: auto;
+    width: 300px;
+    margin: 6px 0 0 10px;
+  }
+  
+  .sign-in-text {
+    font-size: 1.2rem;
+  }
+  
+  .google-icon {
+    font-size: 1.2rem;
+  }
+  

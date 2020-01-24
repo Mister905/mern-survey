@@ -1,0 +1,43 @@
+// COMPONENTS
+@import "../../components/landing/Landing.scss";
+@import "../../components/layout/header/Header.scss";
+@import "../../components/dashboard/Dashboard.scss";
+@import "../../components/surveys/create_survey/CreateSurvey.scss";
+@import "../../components/layout/loader/Loader.scss";
+@import "../../components/credits/payment_form/PaymentForm.scss";
+@import "../../components/credits/add_credits/AddCredits.scss";
+@import "../../components/email_response/EmailResponse.scss";
+@import "../../components/surveys/review_survey/ReviewSurvey.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.component-heading {
+  font-size: 2rem;
+}
+
+.custom-helper-error {
+  font-size: 12px;
+  color: #f44336;
+}
+
+.error-label {
+  color: #f44336;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
