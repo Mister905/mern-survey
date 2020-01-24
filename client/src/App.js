@@ -10,7 +10,8 @@ import CreateSurvey from "./components/surveys/create_survey/CreateSurvey";
 import AddCredits from "./components/credits/add_credits/AddCredits";
 import EmailResponse from "./components/email_response/EmailResponse";
 import ReviewSurvey from "./components/surveys/review_survey/ReviewSurvey";
-import PrivateRoute from './components/private_route/PrivateRoute';
+import PrivateRoute from "./components/private_route/PrivateRoute";
+import LoadingScreen from "./components/layout/loading_screen/LoadingScreen";
 
 // ACTIONS
 import { get_current_user } from "./actions/auth";
@@ -27,9 +28,7 @@ class App extends Component {
         <BrowserRouter>
           <Header />
           <Switch>
-            {Object.entries(current_user).length === 0 &&
-              current_user.constructor === Object &&
-              loading_user && <LoadingScreen />}
+            {current_user == null && loading_user && <LoadingScreen />}
             <Route exact path="/" component={Landing} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute
