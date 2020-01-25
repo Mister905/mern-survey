@@ -11,17 +11,18 @@ class Landing extends Component {
     document.body.classList.add("landing-bg");
   }
 
-  componentWillUnmount = () => {
-    document.body.classList.remove("landing-bg");
-  }
-
-  componentDidUpdate = () => {
+  componentDidMount = () => {
     if (this.props.auth.current_user) {
       this.props.history.push("/dashboard");
     }
   };
 
+  componentWillUnmount = () => {
+    document.body.classList.remove("landing-bg");
+  };
+
   render() {
+    console.log("derp");
     return (
       <div>
         <div id="landing-overlay"></div>
